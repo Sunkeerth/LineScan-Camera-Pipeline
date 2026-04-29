@@ -7,16 +7,16 @@
 ## Demo
 
 ### Pipeline Running Live on Terminal
-![Terminal Output](CYNLR%20%E2%80%93%20Software%20Engineer%20Project%20Overview%20.pdf)
+![Terminal Output](docs/media/terminal_output.png)
 
 ### What the USB Webcam Captured (Notebook Page)
-![Webcam Frame](mobile.mp4)
+![Webcam Frame](docs/media/webcam_frame.png)
 
 ### Defect Detection Inference Report
-![Inference Report](CynLr_Design_Overview.docx)
+![Inference Report](docs/media/defect_result.png)
 
 ### Screen Recording — Full Demo
-[![Demo Video](mobile.mp4)]
+[![Demo Video](docs/media/webcam_frame.png)](docs/media/demo_video.mp4)
 > *Click image to watch `docs/media/demo_video.mp4`*
 
 ---
