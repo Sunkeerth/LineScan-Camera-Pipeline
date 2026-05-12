@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/suneerth/CynLr_Final/include -isystem /usr/include/opencv4
+CXX_INCLUDES = -I/home/suneerth/cynlr_final/include -isystem /usr/include/opencv4
 
 CXX_FLAGS = -O3 -DNDEBUG -Wall -Wextra -O2 -std=gnu++17
 

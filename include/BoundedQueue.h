@@ -1,6 +1,6 @@
 // BoundedQueue.h
 
-#pragma once
+#pragma once //is a single line you put at the top of a header file to prevent double-loading.
 #include <queue>
 #include <mutex>
 #include <condition_variable>

@@ -1,4 +1,4 @@
-# Install script for directory: /home/suneerth/CynLr_Final
+# Install script for directory: /home/suneerth/cynlr_final
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/suneerth/CynLr_Final/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/suneerth/cynlr_final/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

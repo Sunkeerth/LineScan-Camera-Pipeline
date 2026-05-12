@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/suneerth/CynLr_Final
+CMAKE_SOURCE_DIR = /home/suneerth/cynlr_final
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/suneerth/CynLr_Final/build
+CMAKE_BINARY_DIR = /home/suneerth/cynlr_final/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CynLr_Eval1.dir/depend.make
@@ -72,64 +72,94 @@ include CMakeFiles/CynLr_Eval1.dir/flags.make
 CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o: CMakeFiles/CynLr_Eval1.dir/flags.make
 CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o: ../src/DataGenerationBlock.cpp
 CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o: CMakeFiles/CynLr_Eval1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/CynLr_Final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o -MF CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o.d -o CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o -c /home/suneerth/CynLr_Final/src/DataGenerationBlock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o -MF CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o.d -o CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o -c /home/suneerth/cynlr_final/src/DataGenerationBlock.cpp
 
 CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/CynLr_Final/src/DataGenerationBlock.cpp > CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/cynlr_final/src/DataGenerationBlock.cpp > CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.i
 
 CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/CynLr_Final/src/DataGenerationBlock.cpp -o CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/cynlr_final/src/DataGenerationBlock.cpp -o CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.s
 
 CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o: CMakeFiles/CynLr_Eval1.dir/flags.make
 CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o: ../src/FilterThresholdBlock.cpp
 CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o: CMakeFiles/CynLr_Eval1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/CynLr_Final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o -MF CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o.d -o CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o -c /home/suneerth/CynLr_Final/src/FilterThresholdBlock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o -MF CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o.d -o CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o -c /home/suneerth/cynlr_final/src/FilterThresholdBlock.cpp
 
 CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/CynLr_Final/src/FilterThresholdBlock.cpp > CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/cynlr_final/src/FilterThresholdBlock.cpp > CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.i
 
 CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/CynLr_Final/src/FilterThresholdBlock.cpp -o CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/cynlr_final/src/FilterThresholdBlock.cpp -o CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.s
 
 CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o: CMakeFiles/CynLr_Eval1.dir/flags.make
 CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o: ../src/Pipeline.cpp
 CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o: CMakeFiles/CynLr_Eval1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/CynLr_Final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o -MF CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o.d -o CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o -c /home/suneerth/CynLr_Final/src/Pipeline.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o -MF CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o.d -o CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o -c /home/suneerth/cynlr_final/src/Pipeline.cpp
 
 CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/CynLr_Final/src/Pipeline.cpp > CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/cynlr_final/src/Pipeline.cpp > CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.i
 
 CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/CynLr_Final/src/Pipeline.cpp -o CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/cynlr_final/src/Pipeline.cpp -o CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.s
+
+CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.o: CMakeFiles/CynLr_Eval1.dir/flags.make
+CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.o: ../src/LabellingBlock.cpp
+CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.o: CMakeFiles/CynLr_Eval1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.o -MF CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.o.d -o CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.o -c /home/suneerth/cynlr_final/src/LabellingBlock.cpp
+
+CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/cynlr_final/src/LabellingBlock.cpp > CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.i
+
+CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/cynlr_final/src/LabellingBlock.cpp -o CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.s
+
+CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.o: CMakeFiles/CynLr_Eval1.dir/flags.make
+CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.o: ../src/TracingBlock.cpp
+CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.o: CMakeFiles/CynLr_Eval1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.o -MF CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.o.d -o CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.o -c /home/suneerth/cynlr_final/src/TracingBlock.cpp
+
+CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/cynlr_final/src/TracingBlock.cpp > CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.i
+
+CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/cynlr_final/src/TracingBlock.cpp -o CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.s
 
 CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o: CMakeFiles/CynLr_Eval1.dir/flags.make
 CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o: CMakeFiles/CynLr_Eval1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/CynLr_Final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o -MF CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o.d -o CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o -c /home/suneerth/CynLr_Final/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o -MF CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o.d -o CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o -c /home/suneerth/cynlr_final/src/main.cpp
 
 CMakeFiles/CynLr_Eval1.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CynLr_Eval1.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/CynLr_Final/src/main.cpp > CMakeFiles/CynLr_Eval1.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/cynlr_final/src/main.cpp > CMakeFiles/CynLr_Eval1.dir/src/main.cpp.i
 
 CMakeFiles/CynLr_Eval1.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CynLr_Eval1.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/CynLr_Final/src/main.cpp -o CMakeFiles/CynLr_Eval1.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/cynlr_final/src/main.cpp -o CMakeFiles/CynLr_Eval1.dir/src/main.cpp.s
 
 # Object files for target CynLr_Eval1
 CynLr_Eval1_OBJECTS = \
 "CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o" \
 "CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o" \
 "CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o" \
+"CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.o" \
+"CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.o" \
 "CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o"
 
 # External object files for target CynLr_Eval1
@@ -138,6 +168,8 @@ CynLr_Eval1_EXTERNAL_OBJECTS =
 CynLr_Eval1: CMakeFiles/CynLr_Eval1.dir/src/DataGenerationBlock.cpp.o
 CynLr_Eval1: CMakeFiles/CynLr_Eval1.dir/src/FilterThresholdBlock.cpp.o
 CynLr_Eval1: CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.o
+CynLr_Eval1: CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.o
+CynLr_Eval1: CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.o
 CynLr_Eval1: CMakeFiles/CynLr_Eval1.dir/src/main.cpp.o
 CynLr_Eval1: CMakeFiles/CynLr_Eval1.dir/build.make
 CynLr_Eval1: /usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.5.4d
@@ -145,7 +177,7 @@ CynLr_Eval1: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.5.4d
 CynLr_Eval1: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.5.4d
 CynLr_Eval1: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.5.4d
 CynLr_Eval1: CMakeFiles/CynLr_Eval1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/suneerth/CynLr_Final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable CynLr_Eval1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable CynLr_Eval1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CynLr_Eval1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -157,6 +189,6 @@ CMakeFiles/CynLr_Eval1.dir/clean:
 .PHONY : CMakeFiles/CynLr_Eval1.dir/clean
 
 CMakeFiles/CynLr_Eval1.dir/depend:
-	cd /home/suneerth/CynLr_Final/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/suneerth/CynLr_Final /home/suneerth/CynLr_Final /home/suneerth/CynLr_Final/build /home/suneerth/CynLr_Final/build /home/suneerth/CynLr_Final/build/CMakeFiles/CynLr_Eval1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/suneerth/cynlr_final/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/suneerth/cynlr_final /home/suneerth/cynlr_final /home/suneerth/cynlr_final/build /home/suneerth/cynlr_final/build /home/suneerth/cynlr_final/build/CMakeFiles/CynLr_Eval1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/CynLr_Eval1.dir/depend
 

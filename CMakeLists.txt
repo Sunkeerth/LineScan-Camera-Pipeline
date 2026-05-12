@@ -15,6 +15,8 @@ set(PIPELINE_SOURCES
     src/DataGenerationBlock.cpp
     src/FilterThresholdBlock.cpp
     src/Pipeline.cpp
+    src/LabellingBlock.cpp
+    src/TracingBlock.cpp
 )
 
 add_executable(CynLr_Eval1  ${PIPELINE_SOURCES} src/main.cpp)

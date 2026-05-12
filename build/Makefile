@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/suneerth/CynLr_Final
+CMAKE_SOURCE_DIR = /home/suneerth/cynlr_final
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/suneerth/CynLr_Final/build
+CMAKE_BINARY_DIR = /home/suneerth/cynlr_final/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/suneerth/CynLr_Final/build/CMakeFiles /home/suneerth/CynLr_Final/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/suneerth/cynlr_final/build/CMakeFiles /home/suneerth/cynlr_final/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/suneerth/CynLr_Final/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/suneerth/cynlr_final/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -196,6 +196,33 @@ src/FilterThresholdBlock.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.s
 .PHONY : src/FilterThresholdBlock.cpp.s
 
+src/LabellingBlock.o: src/LabellingBlock.cpp.o
+.PHONY : src/LabellingBlock.o
+
+# target to build an object file
+src/LabellingBlock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CynLr_Eval1.dir/build.make CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.o
+.PHONY : src/LabellingBlock.cpp.o
+
+src/LabellingBlock.i: src/LabellingBlock.cpp.i
+.PHONY : src/LabellingBlock.i
+
+# target to preprocess a source file
+src/LabellingBlock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CynLr_Eval1.dir/build.make CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.i
+.PHONY : src/LabellingBlock.cpp.i
+
+src/LabellingBlock.s: src/LabellingBlock.cpp.s
+.PHONY : src/LabellingBlock.s
+
+# target to generate assembly for a file
+src/LabellingBlock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CynLr_Eval1.dir/build.make CMakeFiles/CynLr_Eval1.dir/src/LabellingBlock.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.s
+.PHONY : src/LabellingBlock.cpp.s
+
 src/Pipeline.o: src/Pipeline.cpp.o
 .PHONY : src/Pipeline.o
 
@@ -222,6 +249,33 @@ src/Pipeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CynLr_Eval1.dir/build.make CMakeFiles/CynLr_Eval1.dir/src/Pipeline.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/Pipeline.cpp.s
 .PHONY : src/Pipeline.cpp.s
+
+src/TracingBlock.o: src/TracingBlock.cpp.o
+.PHONY : src/TracingBlock.o
+
+# target to build an object file
+src/TracingBlock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CynLr_Eval1.dir/build.make CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/TracingBlock.cpp.o
+.PHONY : src/TracingBlock.cpp.o
+
+src/TracingBlock.i: src/TracingBlock.cpp.i
+.PHONY : src/TracingBlock.i
+
+# target to preprocess a source file
+src/TracingBlock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CynLr_Eval1.dir/build.make CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/TracingBlock.cpp.i
+.PHONY : src/TracingBlock.cpp.i
+
+src/TracingBlock.s: src/TracingBlock.cpp.s
+.PHONY : src/TracingBlock.s
+
+# target to generate assembly for a file
+src/TracingBlock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CynLr_Eval1.dir/build.make CMakeFiles/CynLr_Eval1.dir/src/TracingBlock.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/TracingBlock.cpp.s
+.PHONY : src/TracingBlock.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -287,9 +341,15 @@ help:
 	@echo "... src/FilterThresholdBlock.o"
 	@echo "... src/FilterThresholdBlock.i"
 	@echo "... src/FilterThresholdBlock.s"
+	@echo "... src/LabellingBlock.o"
+	@echo "... src/LabellingBlock.i"
+	@echo "... src/LabellingBlock.s"
 	@echo "... src/Pipeline.o"
 	@echo "... src/Pipeline.i"
 	@echo "... src/Pipeline.s"
+	@echo "... src/TracingBlock.o"
+	@echo "... src/TracingBlock.i"
+	@echo "... src/TracingBlock.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

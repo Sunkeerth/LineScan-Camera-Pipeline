@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/suneerth/CynLr_Final
+CMAKE_SOURCE_DIR = /home/suneerth/cynlr_final
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/suneerth/CynLr_Final/build
+CMAKE_BINARY_DIR = /home/suneerth/cynlr_final/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/run_tests.dir/depend.make
@@ -72,64 +72,94 @@ include CMakeFiles/run_tests.dir/flags.make
 CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o: CMakeFiles/run_tests.dir/flags.make
 CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o: ../src/DataGenerationBlock.cpp
 CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/CynLr_Final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o -MF CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o.d -o CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o -c /home/suneerth/CynLr_Final/src/DataGenerationBlock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o -MF CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o.d -o CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o -c /home/suneerth/cynlr_final/src/DataGenerationBlock.cpp
 
 CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/CynLr_Final/src/DataGenerationBlock.cpp > CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/cynlr_final/src/DataGenerationBlock.cpp > CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.i
 
 CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/CynLr_Final/src/DataGenerationBlock.cpp -o CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/cynlr_final/src/DataGenerationBlock.cpp -o CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.s
 
 CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o: CMakeFiles/run_tests.dir/flags.make
 CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o: ../src/FilterThresholdBlock.cpp
 CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/CynLr_Final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o -MF CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o.d -o CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o -c /home/suneerth/CynLr_Final/src/FilterThresholdBlock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o -MF CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o.d -o CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o -c /home/suneerth/cynlr_final/src/FilterThresholdBlock.cpp
 
 CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/CynLr_Final/src/FilterThresholdBlock.cpp > CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/cynlr_final/src/FilterThresholdBlock.cpp > CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.i
 
 CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/CynLr_Final/src/FilterThresholdBlock.cpp -o CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/cynlr_final/src/FilterThresholdBlock.cpp -o CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.s
 
 CMakeFiles/run_tests.dir/src/Pipeline.cpp.o: CMakeFiles/run_tests.dir/flags.make
 CMakeFiles/run_tests.dir/src/Pipeline.cpp.o: ../src/Pipeline.cpp
 CMakeFiles/run_tests.dir/src/Pipeline.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/CynLr_Final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/run_tests.dir/src/Pipeline.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/src/Pipeline.cpp.o -MF CMakeFiles/run_tests.dir/src/Pipeline.cpp.o.d -o CMakeFiles/run_tests.dir/src/Pipeline.cpp.o -c /home/suneerth/CynLr_Final/src/Pipeline.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/run_tests.dir/src/Pipeline.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/src/Pipeline.cpp.o -MF CMakeFiles/run_tests.dir/src/Pipeline.cpp.o.d -o CMakeFiles/run_tests.dir/src/Pipeline.cpp.o -c /home/suneerth/cynlr_final/src/Pipeline.cpp
 
 CMakeFiles/run_tests.dir/src/Pipeline.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/src/Pipeline.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/CynLr_Final/src/Pipeline.cpp > CMakeFiles/run_tests.dir/src/Pipeline.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/cynlr_final/src/Pipeline.cpp > CMakeFiles/run_tests.dir/src/Pipeline.cpp.i
 
 CMakeFiles/run_tests.dir/src/Pipeline.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/src/Pipeline.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/CynLr_Final/src/Pipeline.cpp -o CMakeFiles/run_tests.dir/src/Pipeline.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/cynlr_final/src/Pipeline.cpp -o CMakeFiles/run_tests.dir/src/Pipeline.cpp.s
+
+CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.o: CMakeFiles/run_tests.dir/flags.make
+CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.o: ../src/LabellingBlock.cpp
+CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.o -MF CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.o.d -o CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.o -c /home/suneerth/cynlr_final/src/LabellingBlock.cpp
+
+CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/cynlr_final/src/LabellingBlock.cpp > CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.i
+
+CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/cynlr_final/src/LabellingBlock.cpp -o CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.s
+
+CMakeFiles/run_tests.dir/src/TracingBlock.cpp.o: CMakeFiles/run_tests.dir/flags.make
+CMakeFiles/run_tests.dir/src/TracingBlock.cpp.o: ../src/TracingBlock.cpp
+CMakeFiles/run_tests.dir/src/TracingBlock.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/run_tests.dir/src/TracingBlock.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/src/TracingBlock.cpp.o -MF CMakeFiles/run_tests.dir/src/TracingBlock.cpp.o.d -o CMakeFiles/run_tests.dir/src/TracingBlock.cpp.o -c /home/suneerth/cynlr_final/src/TracingBlock.cpp
+
+CMakeFiles/run_tests.dir/src/TracingBlock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/src/TracingBlock.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/cynlr_final/src/TracingBlock.cpp > CMakeFiles/run_tests.dir/src/TracingBlock.cpp.i
+
+CMakeFiles/run_tests.dir/src/TracingBlock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/src/TracingBlock.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/cynlr_final/src/TracingBlock.cpp -o CMakeFiles/run_tests.dir/src/TracingBlock.cpp.s
 
 CMakeFiles/run_tests.dir/tests/tests.cpp.o: CMakeFiles/run_tests.dir/flags.make
 CMakeFiles/run_tests.dir/tests/tests.cpp.o: ../tests/tests.cpp
 CMakeFiles/run_tests.dir/tests/tests.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/CynLr_Final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/run_tests.dir/tests/tests.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/tests/tests.cpp.o -MF CMakeFiles/run_tests.dir/tests/tests.cpp.o.d -o CMakeFiles/run_tests.dir/tests/tests.cpp.o -c /home/suneerth/CynLr_Final/tests/tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/run_tests.dir/tests/tests.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/tests/tests.cpp.o -MF CMakeFiles/run_tests.dir/tests/tests.cpp.o.d -o CMakeFiles/run_tests.dir/tests/tests.cpp.o -c /home/suneerth/cynlr_final/tests/tests.cpp
 
 CMakeFiles/run_tests.dir/tests/tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/tests/tests.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/CynLr_Final/tests/tests.cpp > CMakeFiles/run_tests.dir/tests/tests.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/suneerth/cynlr_final/tests/tests.cpp > CMakeFiles/run_tests.dir/tests/tests.cpp.i
 
 CMakeFiles/run_tests.dir/tests/tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/tests/tests.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/CynLr_Final/tests/tests.cpp -o CMakeFiles/run_tests.dir/tests/tests.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/suneerth/cynlr_final/tests/tests.cpp -o CMakeFiles/run_tests.dir/tests/tests.cpp.s
 
 # Object files for target run_tests
 run_tests_OBJECTS = \
 "CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o" \
 "CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o" \
 "CMakeFiles/run_tests.dir/src/Pipeline.cpp.o" \
+"CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.o" \
+"CMakeFiles/run_tests.dir/src/TracingBlock.cpp.o" \
 "CMakeFiles/run_tests.dir/tests/tests.cpp.o"
 
 # External object files for target run_tests
@@ -138,6 +168,8 @@ run_tests_EXTERNAL_OBJECTS =
 run_tests: CMakeFiles/run_tests.dir/src/DataGenerationBlock.cpp.o
 run_tests: CMakeFiles/run_tests.dir/src/FilterThresholdBlock.cpp.o
 run_tests: CMakeFiles/run_tests.dir/src/Pipeline.cpp.o
+run_tests: CMakeFiles/run_tests.dir/src/LabellingBlock.cpp.o
+run_tests: CMakeFiles/run_tests.dir/src/TracingBlock.cpp.o
 run_tests: CMakeFiles/run_tests.dir/tests/tests.cpp.o
 run_tests: CMakeFiles/run_tests.dir/build.make
 run_tests: /usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.5.4d
@@ -145,7 +177,7 @@ run_tests: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.5.4d
 run_tests: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.5.4d
 run_tests: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.5.4d
 run_tests: CMakeFiles/run_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/suneerth/CynLr_Final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable run_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/suneerth/cynlr_final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable run_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/run_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -157,6 +189,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/suneerth/CynLr_Final/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/suneerth/CynLr_Final /home/suneerth/CynLr_Final /home/suneerth/CynLr_Final/build /home/suneerth/CynLr_Final/build /home/suneerth/CynLr_Final/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/suneerth/cynlr_final/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/suneerth/cynlr_final /home/suneerth/cynlr_final /home/suneerth/cynlr_final/build /home/suneerth/cynlr_final/build /home/suneerth/cynlr_final/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 
