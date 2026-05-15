@@ -1,3 +1,10 @@
+// ============================================================================
+// Pipeline.cpp
+// Orchestrates the four blocks: creates input queues, instantiates each block,
+// starts them in reverse order (consumers first), waits for completion, and
+// saves results (components.csv, inference_report.txt, etc.).
+// ============================================================================
+
 #include "Pipeline.h"
 #include "CsvDataSource.h"
 #include "RngDataSource.h"
@@ -12,8 +19,11 @@
 #include <mutex>
 #include <chrono>
 #include <ctime>
-#include <sys/stat.h>
+#include <sys/stat.h>   // mkdir
 
+// ----------------------------------------------------------------------------
+// Helper: generate a timestamp string (YYYYMMDD_HHMMSS) for run directory.
+// ----------------------------------------------------------------------------
 static std::string make_timestamp()
 {
     auto now  = std::chrono::system_clock::now();
@@ -23,11 +33,18 @@ static std::string make_timestamp()
     return std::string(buf);
 }
 
+// ----------------------------------------------------------------------------
+// Helper: create a directory (cross‑platform using POSIX mkdir).
+// ----------------------------------------------------------------------------
 static void mkdir_p(const std::string& path)
 {
     mkdir(path.c_str(), 0755);
 }
 
+// ----------------------------------------------------------------------------
+// Constructor: validates config, creates queues, instantiates data source,
+// and builds the four blocks with their callbacks.
+// ----------------------------------------------------------------------------
 Pipeline::Pipeline(PipelineConfig cfg) : m_cfg(std::move(cfg))
 {
     if (m_cfg.interval_ns < 100)
@@ -35,29 +52,31 @@ Pipeline::Pipeline(PipelineConfig cfg) : m_cfg(std::move(cfg))
     if (m_cfg.columns <= 0 || m_cfg.columns % 2 != 0)
         throw std::invalid_argument("Columns m must be a positive even number.");
 
-    m_run_id = make_timestamp();
+    m_run_id = make_timestamp();   // unique ID for this run
 
-    // ── Block 1→2 queue ──────────────────────────────────────────────────────
+    // ── Block 1 → Block 2 queue ──────────────────────────────────────────────
+    // Capacity = number of columns (m). This bounds memory as required.
     m_queue = std::make_shared<BoundedQueue<PixelPair>>(
         static_cast<size_t>(m_cfg.columns));
 
-    // ── Block 2→3 queue ──────────────────────────────────────────────────────
+    // ── Block 2 → Block 3 queue ──────────────────────────────────────────────
+    // Larger capacity (4*m) to absorb bursts between filter and labelling.
     m_label_queue = std::make_shared<BoundedQueue<FilteredOutput>>(
         static_cast<size_t>(m_cfg.columns * 4));
 
-    // ── Block 3→4 queue ──────────────────────────────────────────────────────
+    // ── Block 3 → Block 4 queue ──────────────────────────────────────────────
     m_trace_queue = std::make_shared<BoundedQueue<LabelledPixel>>(
         static_cast<size_t>(m_cfg.columns * 4));
 
-    // ── Data source ──────────────────────────────────────────────────────────
+    // ── Create the data source (Strategy pattern) ────────────────────────────
     std::string run_dir      = m_cfg.project_data_dir + "/run_" + m_run_id;
-    std::string preview_path = run_dir + "/webcam_frame.png";
+    std::string preview_path = run_dir + "/webcam_frame.png";   // only used for webcam
 
     std::unique_ptr<IDataSource> source;
     if (m_cfg.webcam_mode)
     {
         mkdir_p(m_cfg.project_data_dir);
-        mkdir_p(run_dir);
+        mkdir_p(run_dir);   // create run directory before saving preview image
         source = std::make_unique<WebcamDataSource>(
             m_cfg.columns, m_cfg.webcam_rows,
             m_cfg.webcam_device, preview_path);
@@ -71,10 +90,11 @@ Pipeline::Pipeline(PipelineConfig cfg) : m_cfg(std::move(cfg))
     m_data_gen = std::make_unique<DataGenerationBlock>(
         std::move(source), m_queue, m_cfg.interval_ns, m_cfg.max_pairs);
 
+    // Mutex for thread‑safe accumulation of outputs and components
     m_output_mutex = std::make_unique<std::mutex>();
     std::mutex* mtx = m_output_mutex.get();
 
-    // ── Block 2: FilterThresholdBlock ─────────────────────────────────────────
+    // ── Block 2: FilterThresholdBlock with callback that stores outputs ───────
     auto on_output = [this, mtx](const FilteredOutput& out)
     {
         {
@@ -86,14 +106,14 @@ Pipeline::Pipeline(PipelineConfig cfg) : m_cfg(std::move(cfg))
                           << "  result=" << (out.thresholded ? "DEFECT" : "ok") << "\n";
             m_outputs.push_back(out);
         }
-        // Feed Block 3 (outside lock to avoid deadlock)
+        // Forward to Block 3 (outside lock to avoid deadlock)
         m_label_queue->push(out);
     };
 
     m_filter = std::make_unique<FilterThresholdBlock>(
         m_queue, m_cfg.threshold_tv, on_output);
 
-    // ── Block 3: LabellingBlock ───────────────────────────────────────────────
+    // ── Block 3: LabellingBlock callback (sends LabelledPixel to Block 4) ─────
     auto on_labelled = [this](const LabelledPixel& lp)
     {
         m_trace_queue->push(lp);
@@ -102,7 +122,7 @@ Pipeline::Pipeline(PipelineConfig cfg) : m_cfg(std::move(cfg))
     m_labeller = std::make_unique<LabellingBlock>(
         m_label_queue, m_cfg.columns, on_labelled);
 
-    // ── Block 4: TracingBlock ─────────────────────────────────────────────────
+    // ── Block 4: TracingBlock callbacks ──────────────────────────────────────
     auto on_component = [this, mtx](const ComponentResult& r)
     {
         std::lock_guard<std::mutex> lk(*mtx);
@@ -115,7 +135,7 @@ Pipeline::Pipeline(PipelineConfig cfg) : m_cfg(std::move(cfg))
 
     auto on_recycle = [this](uint8_t label)
     {
-        m_labeller->recycle_label(label);
+        m_labeller->recycle_label(label);   // return label to Block 3's free pool
     };
 
     m_tracer = std::make_unique<TracingBlock>(
@@ -123,35 +143,52 @@ Pipeline::Pipeline(PipelineConfig cfg) : m_cfg(std::move(cfg))
         on_component, on_recycle);
 }
 
+// ----------------------------------------------------------------------------
+// Starts all four blocks in reverse order (consumers first) so that queues
+// have waiters before producers push. Then waits for Block 1 to finish.
+// After that, shuts down downstream blocks and saves results.
+// ----------------------------------------------------------------------------
 void Pipeline::run()
 {
-    // Start all 4 blocks (reverse order so consumers ready before producers)
+    // Start Block 4, then Block 3, then Block 2, then Block 1.
     m_tracer->start();
     m_labeller->start();
     m_filter->start();
     m_data_gen->start();
 
-    m_data_gen->wait_until_done();   // blocks until source exhausted / Ctrl+C
+    // Block until Block 1 finishes (source exhausted or Ctrl+C)
+    m_data_gen->wait_until_done();
 
-    // Shutdown in pipeline order
+    // Shut down in pipeline order (source first, then downstream)
     m_filter->stop();
-    m_label_queue->close();          // unblocks LabellingBlock
+    m_label_queue->close();    // unblocks LabellingBlock::pop()
     m_labeller->stop();
-    m_trace_queue->close();          // unblocks TracingBlock
+    m_trace_queue->close();    // unblocks TracingBlock::pop()
     m_tracer->stop();
 
-    save_results();
+    save_results();            // write all output files
 }
 
+// ----------------------------------------------------------------------------
+// Signal handler calls this to stop Block 1 gracefully.
+// ----------------------------------------------------------------------------
 void Pipeline::request_stop() { m_data_gen->stop(); }
 
+// ----------------------------------------------------------------------------
+// Writes four output files:
+//   1. results.csv         – every pixel (index, raw, filtered, defect flag)
+//   2. defects_only.csv    – only defect pixels
+//   3. components.csv      – final connected components (label, size, bbox)
+//   4. inference_report.txt – human‑readable summary (statistics, timing, verdict)
+// Also prints a summary to the console.
+// ----------------------------------------------------------------------------
 void Pipeline::save_results() const
 {
     std::string run_dir = m_cfg.project_data_dir + "/run_" + m_run_id;
     mkdir_p(m_cfg.project_data_dir);
     mkdir_p(run_dir);
 
-    // ── Statistics ───────────────────────────────────────────────────────────
+    // Compute basic statistics
     int defects = 0, ok_pixels = 0;
     int min_val = 255, max_val = 0;
     double sum = 0.0;
@@ -166,7 +203,7 @@ void Pipeline::save_results() const
     double avg        = m_outputs.empty() ? 0.0 : sum / m_outputs.size();
     double defect_pct = m_outputs.empty() ? 0.0 : (100.0 * defects / m_outputs.size());
 
-    // ── 1. All pixels CSV ────────────────────────────────────────────────────
+    // 1. All pixels CSV
     {
         std::ofstream f(run_dir + "/results.csv");
         f << "pixel_index,raw_value,filtered_value,defect\n";
@@ -177,7 +214,7 @@ void Pipeline::save_results() const
               << static_cast<int>(m_outputs[i].thresholded) << "\n";
     }
 
-    // ── 2. Defects-only CSV ──────────────────────────────────────────────────
+    // 2. Defects‑only CSV
     {
         std::ofstream f(run_dir + "/defects_only.csv");
         f << "pixel_index,raw_value,filtered_value\n";
@@ -189,7 +226,7 @@ void Pipeline::save_results() const
                   << m_outputs[i].filtered << "\n";
     }
 
-    // ── 3. Components CSV (Phase 2 output) ───────────────────────────────────
+    // 3. Components CSV (Phase 2 output – one row per blob)
     {
         std::ofstream f(run_dir + "/components.csv");
         f << "label,pixel_count,row_start,col_start,row_end,col_end\n";
@@ -200,7 +237,7 @@ void Pipeline::save_results() const
               << c.row_end   << "," << c.col_end   << "\n";
     }
 
-    // ── 4. Inference report ──────────────────────────────────────────────────
+    // 4. Inference report (human readable)
     {
         std::ofstream f(run_dir + "/inference_report.txt");
         f << "==========================================================\n";
@@ -256,7 +293,7 @@ void Pipeline::save_results() const
         f << "==========================================================\n";
     }
 
-    // ── Terminal summary ─────────────────────────────────────────────────────
+    // Console summary
     std::cout << "\n==========================================================\n";
     std::cout << "  Results saved to: " << run_dir << "/\n";
     std::cout << "==========================================================\n";
@@ -274,6 +311,9 @@ void Pipeline::save_results() const
     std::cout << "==========================================================\n";
 }
 
+// ----------------------------------------------------------------------------
+// Prints a concise performance profile to the console.
+// ----------------------------------------------------------------------------
 void Pipeline::print_profile() const
 {
     int defects = 0;
